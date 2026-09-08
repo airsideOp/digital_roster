@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Monthly Roster</title>
+    <link rel="icon" href="image/EKFC_LOGO (2).png">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+     HERO / HEADER
+========================= -->
+
+    <header class="header">
+
+        <div class="logo">
+            <img src="image/EKFC_LOGO (2).png" alt="">
+            <h1>MY MONTHLY ROSTER
+                <p>Check your monthly roster here....</p>
+            </h1>
+        </div>
+
+        <!-- ERP SEARCH -->
+
+        <div class="search-box">
+
+            <input type="text" id="erpInput" placeholder="Enter Your ERP Number.." autocomplete="off">
+
+            <button id="searchButton">
+                Search
+            </button>
+
+        </div>
+
+        <div id="errorMessage" class="error-message">
+            <!-- error message -->
+        </div>
+
+
+        <!-- SHIFT CODES -->
+
+        <div class="shift-codes">
+
+            <span>Shifts Codes</span>
+            <span>A30 - Morning</span>
+            <span>A37 - B shift</span>
+            <span>C11 - Night 10:00</span>
+            <span>C33 - Night 11:00</span>
+
+        </div>
+        <pre></pre>
+        <button class="roster-btn">
+            Roster Request
+        </button>
+    </header>
+
+
+    <!-- =========================
+     ROSTER REQUEST
+========================= -->
+
+    <br>
+
+
+
+
+    <!-- =========================
+     MAIN ROSTER SECTION
+========================= -->
+
+    <main class="container" id="rosterSection">
+
+
+        <!-- TITLE -->
+
+        <div class="title-row">
+
+            <h2>YOUR ROSTER</h2>
+
+        </div>
+
+
+        <!-- =========================
+         EMPLOYEE INFORMATION
+    ========================= -->
+
+        <div class="employee-card">
+
+            <div class="team-leader">
+
+                Team Leader Name :-
+                <strong id="teamLeader">-</strong>
+
+            </div>
+
+
+            <div class="employee-details">
+
+                ERP:
+                <strong id="employeeERP">-</strong>
+
+                <span class="separator">|</span>
+
+                Employee:
+                <strong id="employeeName">-</strong>
+
+                <span class="separator">|</span>
+
+                Position:
+                <strong id="employeePosition">-</strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+         LOADING
+    ========================= -->
+
+        <div id="loading" class="loading">
+
+            Loading roster...
+
+        </div>
+
+
+        <!-- =========================
+         ROSTER TABLE
+    ========================= -->
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>DATE</th>
+                        <th>SHIFT</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="rosterTable">
+
+                    <!-- JavaScript will add roster data here -->
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+    
+
+
+<script src="script.js"></script>
+</body>
+</html>
