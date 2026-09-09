@@ -7,6 +7,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="theme-color" content="#19385f">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <title>Monthly Roster</title>
     <link rel="icon" href="image/EKFC_LOGO (2).png">
@@ -60,15 +61,37 @@
 
         </div>
         <pre></pre>
-        <button class="roster-btn">
+        <button class="roster-btn" id="openRosterBtn">
             Roster Request
         </button>
+
+        <!-- ================================
+     ROSTER REQUEST MODAL
+        ================================= -->
+
+        <div class="roster-modal" id="rosterModal">
+
+            <div class="roster-modal-overlay" id="rosterOverlay"></div>
+
+            <div class="roster-modal-content">
+
+                <!-- Close Button -->
+                <button class="roster-close" id="closeRosterBtn" aria-label="Close">
+                    <i class="fa-solid fa-xmark" style="color: rgb(255, 6, 6);"></i>
+                </button>
+
+                <!-- Your existing form page -->
+                <iframe src="request_form.html" class="roster-form-frame" id="rosterFormFrame"
+                    title="Roster Request Form">
+                </iframe>
+
+            </div>
+
+        </div>
     </header>
 
 
-    <!-- =========================
-     ROSTER REQUEST
-========================= -->
+
 
     <br>
 
@@ -167,9 +190,9 @@
         </div>
 
 
-    
 
-
-<script src="script.js"></script>
+        <script src="roster_script.js"></script>
+        <script src="script.js"></script>
 </body>
+
 </html>
