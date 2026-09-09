@@ -1,12 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monthly Roster</title>
+
+    <link rel="stylesheet" href="request_form.css">
+
+    <title>Monthly Roaster</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="icon" href="image/EKFC_LOGO (2).png">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
 <body>
-    
+
+    <div class="background-animation"></div>
+    <main class="page-container">
+        <section class="feedback-card">
+
+            <!-- Header -->
+            <div class="form-header">
+                <img src="image/EKFC_LOGO (2).png" alt="" width="160px">
+
+               
+
+                <h1>Roster Request</h1>
+
+
+                <p>
+                    Need a roster or shift change? Submit your request here, and we’ll review it. <mark> Please submit
+                        all
+                        requests at least <span style="color: rgb(0, 0, 0); font-weight: bold;" >3 days</span> in advance for confirmation </mark>.
+                </p>
+
+            </div>
+
+            <!-- Form -->
+             <!-- <div class="header-icon"> -->
+                    <!-- <i class="fa-solid fa-comments"></i> -->
+                <!-- </div> -->
+
+            <form id="feedbackForm">
+                 
+                <!-- ERP Number -->
+                <div class="form-group">
+
+                    <label for="erpNumber">
+                        <i class="fa-solid fa-id-card"></i>
+                        Staff ERP Number
+                        <span class="required">*</span>
+                    </label>
+
+                    <input type="text" id="erpNumber" placeholder="Your ERP here... " name="erpNumber" required>
+
+                </div>
+
+
+                <!-- Staff Name -->
+                <div class="form-group">
+
+                    <label for="staffName">
+                        <i class="fa-solid fa-user"></i>
+
+                        Staff Name
+                        <span class="required">*</span>
+                    </label>
+
+                    <input type="text" id="staffName" placeholder="Your Name here..." name="staffName" required>
+
+                </div>
+
+
+                <!-- Question 1 -->
+                <div class="form-group">
+
+                    <label for="rosterChange">
+                        <span class="question-number">1</span>
+                        Why are you requesting this change?
+                        <span class="required">*</span>
+                    </label>
+
+                    <input type="text" id="rosterChange" placeholder="Enter the Feedback" name="rosterChange" required>
+
+                </div>
+
+
+                <!-- Question 2 -->
+                <div class="form-group">
+
+                    <label for="reasonRequest">
+                        <span class="question-number">2</span>
+                        What is the reason for your request?
+                        <span class="required">*</span>
+                    </label>
+
+                    <input type="text" id="reasonRequest" placeholder="Enter the Feedback" name="reasonRequest"
+                        required>
+
+                </div>
+
+
+
+
+                <!-- Submit -->
+                <button type="submit" id="submitButton">
+
+                    <span id="buttonText">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        Submit Feedback
+                    </span>
+
+                    <span id="loadingText" class="loading-text">
+                        <i class="fa-solid fa-spinner fa-spin"></i>
+                        Submitting...
+                    </span>
+
+                </button>
+
+
+                <!-- Success -->
+                <div id="successMessage" class="success-message">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <div>
+                        <strong>Thank you!</strong>
+                        <p>Your request has been successfully submitted. We’ll work on it soon.</p>
+                    </div>
+
+                </div>
+
+
+                <!-- Error -->
+                <div id="formError" class="form-error">
+
+                    <i class="fa-solid fa-circle-exclamation"></i>
+
+                    Something went wrong. Please try again.
+
+                </div>
+
+            </form>
+
+
+            <div class="footer-text">
+                ASO Staff Feedback &nbsp;•&nbsp; Operational Improvement
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="roster_connect.js">
+
+    </script>
+
 </body>
+
 </html>
