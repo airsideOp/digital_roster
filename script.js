@@ -480,7 +480,127 @@ function addRosterRow(item) {
 }
 
 
+/* =====================================
+   ADD ROSTER ROW
+===================================== */
 
+function addRosterRow(item) {
+
+    let dateText;
+
+
+    /* =============================
+       SAME DATE
+    ============================= */
+
+    if (item.startDate === item.endDate) {
+
+        dateText = item.startDate;
+
+    }
+
+
+    /* =============================
+       DATE RANGE
+    ============================= */
+
+    else {
+
+        dateText =
+            item.startDate +
+            " - " +
+            item.endDate;
+
+    }
+
+
+    /* =============================
+       SHIFT
+    ============================= */
+
+    const shift =
+        String(item.shift || "")
+            .trim();
+
+
+    const shiftUpper =
+        shift.toUpperCase();
+
+
+    /* =============================
+       SHIFT COLOR CLASS
+    ============================= */
+
+    let shiftClass = "shift-normal";
+
+
+    if (shiftUpper === "A30") {
+
+        shiftClass = "shift-a30";
+
+    }
+
+    else if (shiftUpper === "A37") {
+
+        shiftClass = "shift-a37";
+
+    }
+
+    else if (shiftUpper === "C11") {
+
+        shiftClass = "shift-c11";
+
+    }
+
+    else if (shiftUpper === "C33") {
+
+        shiftClass = "shift-c33";
+
+    }
+
+    else if (shiftUpper === "L") {
+
+        shiftClass = "shift-l";
+
+    }
+
+    else if (shiftUpper === "OFF") {
+
+        shiftClass = "shift-off";
+
+    }
+
+
+    /* =============================
+       CREATE TABLE ROW
+    ============================= */
+
+    const row =
+        document.createElement("tr");
+
+
+    row.innerHTML = `
+
+        <td>
+            ${escapeHtml(dateText)}
+        </td>
+
+        <td>
+            <span class="shift ${shiftClass}">
+                ${escapeHtml(shift)}
+            </span>
+        </td>
+
+    `;
+
+
+    /* =============================
+       ADD ROW TO TABLE
+    ============================= */
+
+    rosterTable.appendChild(row);
+
+}
 /* =====================================
    SECURITY
    PREVENT HTML INJECTION FROM SHEET
@@ -514,5 +634,9 @@ function escapeHtml(value) {
             /'/g,
             "&#039;"
         );
+
+
+        // popup message
+        
 
 }
